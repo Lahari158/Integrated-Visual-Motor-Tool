@@ -1,4 +1,4 @@
-name: Deploy and test
+name: Scale E2E actions to 1550 test cases
 
 on:
   push:
