@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrated Visual Motor Tool — Visual Monitor Trainer</title>
+    <style>
+        :root {
+            --primary: #1F4E78;
+            --primary-dark: #133452;
+            --accent: #2E86AB;
+            --success: #276A3C;
+            --danger: #9C0006;
+            --warning: #B7791F;
+            --bg-light: #F4F6F9;
+            --card-bg: #FFFFFF;
+            --text-dark: #2D3748;
+            --text-muted: #718096;
+            --border-color: #E2E8F0;
+        }
+
+        [data-theme="dark"] {
+            --primary: #2B6CB0;
+            --primary-dark: #1A365D;
+            --accent: #499FCD;
+            --bg-light: #1A202C;
+            --card-bg: #2D3748;
+            --text-dark: #EDF2F7;
+            --text-muted: #A0AEC0;
+            --border-color: #4A5568;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: var(--bg-light); color: var(--text-dark); min-height: 100vh; display: flex; flex-direction: column; }
+
+        /* Skip link for Accessibility */
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent); color: white; padding: 8px; z-index: 1000; transition: top 0.2s; }
+        .skip-link:focus { top: 0; }
+
+        /* Header & Navigation */
+        header { background-color: var(--primary); color: white; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+        .logo-container { display: flex; align-items: center; gap: 10px; }
+        .logo-icon { width: 32px; height: 32px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); font-weight: bold; }
+        
+        nav { display: flex; gap: 1rem; align-items: center; }
+        nav button { background: transparent; border: 1px solid rgba(255,255,255,0.3); color: white; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; transition: all 0.2s; font-weight: 500; }
+        nav button:hover, nav button.active { background: rgba(255,255,255,0.2); border-color: white; }
+        
+        .header-actions { display: flex; gap: 10px; align-items: center; }
+        .theme-toggle-btn { background: rgba(255,255,255,0.15); border: none; color: white; padding: 6px 12px; border-radius: 20px; cursor: pointer; font-size: 0.85rem; }
+
+        /* Mobile Nav Toggle */
+        .mobile-menu-btn { display: none; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
+
+        /* Main Layout */
+        main { flex: 1; padding: 2rem; max-width: 1400px; margin: 0 auto; width: 100%; }
+
+        .view-section { display: none; }
+        .view-section.active { display: block; }
+
+        /* Cards & Grid */
+        .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+        .card { background: var(--card-bg); border-radius: 8px; border: 1px solid var(--border-color); padding: 1.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+        .card-title { font-size: 1.1rem; font-weight: 600; color: var(--primary); }
+        .metric-value { font-size: 2rem; font-weight: bold; margin: 0.5rem 0; }
+        .metric-sub { font-size: 0.85rem; color: var(--text-muted); }
+
+        /* Status Badge */
+        .status-badge { display: inline-block; padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: bold; text-transform: uppercase; }
+        .status-badge.online { background: #E2EFDA; color: #276A3C; }
+        .status-badge.warning { background: #FFF2CC; color: #B7791F; }
+        .status-badge.error { background: #FCE4D6; color: #9C0006; }
+
+        /* Forms */
+        .form-group { margin-bottom: 1.25rem; }
+        .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 500; font-size: 0.9rem; }
+        .form-control { width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: 4px; background: var(--card-bg); color: var(--text-dark); font-size: 0.95rem; }
+        .form-control:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(46,134,171,0.2); }
+        .field-error { color: var(--danger); font-size: 0.8rem; margin-top: 4px; display: none; }
+        .field-error.visible { display: block; }
+
+        .btn { padding: 0.75rem 1.5rem; border-radius: 4px; border: none; font-weight: 600; cursor: pointer; transition: background 0.2s; display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-primary:hover { background: var(--primary-dark); }
+        .btn-secondary { background: #E2E8F0; color: #2D3748; }
+        .btn-secondary:hover { background: #CBD5E0; }
+        .btn-danger { background: var(--danger); color: white; }
+        .btn-success { background: var(--success); color: white; }
+
+        /* Table */
+        .table-responsive { overflow-x: auto; margin-top: 1rem; }
+        table { width: 100%; border-collapse: collapse; background: var(--card-bg); border-radius: 8px; overflow: hidden; border: 1px solid var(--border-color); }
+        th, td { padding: 0.9rem 1.2rem; text-align: left; border-bottom: 1px solid var(--border-color); font-size: 0.9rem; }
+        th { background: rgba(31,78,120,0.05); font-weight: 600; color: var(--primary); }
+        tr:hover { background: rgba(0,0,0,0.02); }
+
+        /* Auth Container Modal */
+        .modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; z-index: 100; opacity: 0; pointer-events: none; transition: opacity 0.2s; }
+        .modal-overlay.active { opacity: 1; pointer-events: auto; }
+        .modal-box { background: var(--card-bg); width: 90%; max-width: 480px; border-radius: 8px; padding: 2rem; box-shadow: 0 10px 25px rgba(0,0,0,0.2); position: relative; }
+
+        /* Banners */
+        .alert-banner { padding: 1rem; border-radius: 4px; margin-bottom: 1.5rem; display: none; }
+        .alert-banner.visible { display: flex; justify-content: space-between; align-items: center; }
+        .alert-success { background: #E2EFDA; color: #276A3C; border: 1px solid #C3E6CB; }
+        .alert-danger { background: #FCE4D6; color: #9C0006; border: 1px solid #F5C6CB; }
+
+        /* File Drop Zone */
+        .file-drop-zone { border: 2px dashed var(--accent); border-radius: 8px; padding: 2.5rem; text-align: center; cursor: pointer; transition: background 0.2s; }
+        .file-drop-zone:hover { background: rgba(46,134,171,0.05); }
+
+        /* Canvas / Monitor */
+        .canvas-container { position: relative; width: 100%; height: 350px; background: #0F172A; border-radius: 8px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+        canvas { border-radius: 4px; width: 100%; height: 100%; }
+
+        /* Footer */
+        footer { background: var(--primary-dark); color: white; padding: 1.5rem; text-align: center; font-size: 0.85rem; margin-top: auto; }
+
+        @media (max-width: 768px) {
+            header { padding: 1rem; }
+            nav { display: none; flex-direction: column; position: absolute; top: 60px; left: 0; right: 0; background: var(--primary); padding: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+            nav.mobile-active { display: flex; }
+            .mobile-menu-btn { display: block; }
+        }
+    </style>
+</head>
+<body data-theme="light">
+    <a href="#main-content" class="skip-link" id="skip-to-content">Skip to Main Content</a>
+
+    <header role="banner">
+        <div class="logo-container">
+            <div class="logo-icon">VM</div>
+            <h1 style="font-size: 1.25rem; font-weight: 600;" id="app-heading">Visual Monitor Trainer</h1>
+        </div>
+
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Navigation Menu">☰</button>
+
+        <nav id="main-nav" role="navigation" aria-label="Main Navigation">
+            <button id="nav-dashboard" class="active" onclick="switchTab('dashboard')">Dashboard</button>
+            <button id="nav-monitor" onclick="switchTab('monitor')">Visual Monitor</button>
+            <button id="nav-crud" onclick="switchTab('crud')">Data Records</button>
+            <button id="nav-forms" onclick="switchTab('forms')">Assessment Form</button>
+            <button id="nav-fileupload" onclick="switchTab('fileupload')">File Upload</button>
+            <button id="nav-profile" onclick="switchTab('profile')">User Profile</button>
+            <button id="nav-settings" onclick="switchTab('settings')">Settings</button>
+        </nav>
+
+        <div class="header-actions">
+            <button class="theme-toggle-btn" id="theme-toggle-btn" onclick="toggleTheme()" aria-label="Toggle Dark/Light Mode">🌙 Dark Mode</button>
+            <span id="user-role-badge" class="status-badge online">Trainer (Admin)</span>
+            <button id="login-modal-open-btn" class="btn btn-secondary" style="padding: 4px 10px; font-size: 0.85rem;" onclick="openAuthModal()">Login</button>
+            <button id="logout-btn" class="btn btn-danger" style="padding: 4px 10px; font-size: 0.85rem; display: none;" onclick="logout()">Logout</button>
+        </div>
+    </header>
+
+    <main id="main-content" role="main">
+        <!-- Global Alert Banner -->
+        <div id="global-alert-banner" class="alert-banner alert-danger">
+            <span id="global-alert-text">Error message text</span>
+            <button onclick="dismissGlobalAlert()" style="background:none; border:none; color:inherit; font-weight:bold; cursor:pointer;">✕</button>
+        </div>
+
+        <!-- ==================== DASHBOARD VIEW ==================== -->
+        <section id="view-dashboard" class="view-section active">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                <h2>System Dashboard & Telemetry</h2>
+                <div>
+                    <span id="system-status-badge" class="status-badge online">System Active (HTTP 200)</span>
+                    <span id="session-timer-badge" class="status-badge warning" style="margin-left: 8px;">Session: <span id="session-timer">29:59</span></span>
+                </div>
+            </div>
+
+            <div class="dashboard-grid">
+                <div class="card" id="card-active-sessions">
+                    <div class="card-header">
+                        <span class="card-title">Active Training Sessions</span>
+                        <span style="font-size: 1.2rem;">📊</span>
+                    </div>
+                    <div class="metric-value" id="active-sessions-count">142</div>
+                    <div class="metric-sub">+12% increase from previous 24h</div>
+                </div>
+
+                <div class="card" id="card-accuracy-rate">
+                    <div class="card-header">
+                        <span class="card-title">Motor Response Accuracy</span>
+                        <span style="font-size: 1.2rem;">🎯</span>
+                    </div>
+                    <div class="metric-value" id="accuracy-rate-val">96.8%</div>
+                    <div class="metric-sub">Target threshold: 95.0%</div>
+                </div>
+
+                <div class="card" id="card-fps-latency">
+                    <div class="card-header">
+                        <span class="card-title">Render Performance</span>
+                        <span style="font-size: 1.2rem;">⚡</span>
+                    </div>
+                    <div class="metric-value" id="fps-display">60 FPS</div>
+                    <div class="metric-sub">Latency: <span id="latency-display">12 ms</span></div>
+                </div>
+
+                <div class="card" id="card-patient-records">
+                    <div class="card-header">
+                        <span class="card-title">Evaluated Profiles</span>
+                        <span style="font-size: 1.2rem;">👥</span>
+                    </div>
+                    <div class="metric-value" id="total-items-badge">24</div>
+                    <div class="metric-sub">Updated in real-time</div>
+                </div>
+            </div>
+
+            <div class="card" style="margin-bottom: 2rem;">
+                <div class="card-header">
+                    <span class="card-title">Quick Action Controls</span>
+                </div>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <button class="btn btn-primary" id="btn-quick-start-monitor" onclick="switchTab('monitor')">▶ Start Visual Monitor</button>
+                    <button class="btn btn-secondary" id="btn-quick-new-form" onclick="switchTab('forms')">📝 New Patient Assessment</button>
+                    <button class="btn btn-secondary" id="simulate-error-btn" onclick="triggerErrorSimulation()">⚠️ Simulate Network Error</button>
+                    <button class="btn btn-secondary" id="refresh-telemetry-btn" onclick="refreshTelemetry()">🔄 Refresh Metrics</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== VISUAL MONITOR VIEW ==================== -->
+        <section id="view-monitor" class="view-section">
+            <h2 style="margin-bottom: 1rem;">Visual Motor Tracking & Simulation Engine</h2>
+            
+            <div class="card" style="margin-bottom: 1.5rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                    <div>
+                        <strong>Monitor Mode:</strong> <span id="current-monitor-mode">Dynamic Pursuit Tracking</span>
+                    </div>
+                    <div style="display: flex; gap: 10px;">
+                        <button class="btn btn-secondary" id="canvas-start-btn" onclick="startCanvasEngine()">Start Engine</button>
+                        <button class="btn btn-secondary" id="canvas-pause-btn" onclick="pauseCanvasEngine()">Pause</button>
+                        <button class="btn btn-danger" id="canvas-reset-btn" onclick="resetCanvasEngine()">Reset</button>
+                    </div>
+                </div>
+
+                <div class="canvas-container" id="canvas-container-box">
+                    <canvas id="visual-motor-canvas" width="1200" height="300" role="img" aria-label="Visual Motor Tracking Simulation Display"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== DATA RECORDS (CRUD) VIEW ==================== -->
+        <section id="view-crud" class="view-section">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <h2>Patient Assessment Records (CRUD Operations)</h2>
+                <button class="btn btn-primary" id="add-item-btn" onclick="openCrudModal()">+ Add New Record</button>
+            </div>
+
+            <div class="card">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; gap: 1rem; flex-wrap: wrap;">
+                    <input type="text" id="table-search-input" class="form-control" style="max-width: 300px;" placeholder="Search records by name or module..." onkeyup="filterTable()">
+                    <select id="table-category-filter" class="form-control" style="max-width: 200px;" onchange="filterTable()">
+                        <option value="ALL">All Modules</option>
+                        <option value="Visual Tracking">Visual Tracking</option>
+                        <option value="Saccadic Motor">Saccadic Motor</option>
+                        <option value="Fixation Stability">Fixation Stability</option>
+                    </select>
+                </div>
+
+                <div class="table-responsive">
+                    <table id="data-table" aria-label="Patient Assessment Data Table">
+                        <thead>
+                            <tr>
+                                <th>Record ID</th>
+                                <th>Patient Name</th>
+                                <th>Category</th>
+                                <th>Score (%)</th>
+                                <th>Status</th>
+                                <th>Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body">
+                            <!-- Dynamic Rows filled via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== ASSESSMENT FORM VIEW ==================== -->
+        <section id="view-forms" class="view-section">
+            <h2 style="margin-bottom: 1rem;">Patient Assessment & Input Validation Form</h2>
+
+            <div id="form-success-banner" class="alert-banner alert-success">
+                <span>Assessment form submitted successfully! Record saved to telemetry queue.</span>
+            </div>
+
+            <div class="card" style="max-width: 700px;">
+                <form id="assessment-form" onsubmit="handleFormSubmit(event)" novalidate>
+                    <div class="form-group">
+                        <label for="patient-name">Patient Full Name <span style="color:red">*</span></label>
+                        <input type="text" id="patient-name" class="form-control" placeholder="e.g. Eleanor Vance" required>
+                        <div class="field-error" id="patient-name-error">Please enter a valid patient name (min 3 characters).</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="patient-dob">Date of Birth <span style="color:red">*</span></label>
+                        <input type="date" id="patient-dob" class="form-control" required>
+                        <div class="field-error" id="patient-dob-error">Please select a valid date of birth.</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="training-module-select">Target Training Module <span style="color:red">*</span></label>
+                        <select id="training-module-select" class="form-control" required>
+                            <option value="">-- Select Module --</option>
+                            <option value="Visual Tracking">Visual Pursuit Tracking</option>
+                            <option value="Saccadic Motor">Saccadic Motor Response</option>
+                            <option value="Fixation Stability">Fixation & Gaze Stability</option>
+                        </select>
+                        <div class="field-error" id="module-select-error">Module selection is required.</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="target-speed-input">Target Speed (1 - 100 Hz)</label>
+                        <input type="number" id="target-speed-input" class="form-control" min="1" max="100" value="30">
+                        <div class="field-error" id="speed-input-error">Speed must be an integer between 1 and 100.</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="notes-textarea">Clinical Notes & Observations</label>
+                        <textarea id="notes-textarea" class="form-control" rows="4" placeholder="Enter clinical notes..."></textarea>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem;">
+                        <button type="submit" id="submit-form-btn" class="btn btn-primary">Submit Assessment</button>
+                        <button type="button" id="reset-form-btn" class="btn btn-secondary" onclick="resetAssessmentForm()">Reset Form</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- ==================== FILE UPLOAD VIEW ==================== -->
+        <section id="view-fileupload" class="view-section">
+            <h2 style="margin-bottom: 1rem;">Clinical Data & Calibration File Upload</h2>
+
+            <div class="card" style="max-width: 650px;">
+                <div class="file-drop-zone" id="file-drop-zone" onclick="document.getElementById('file-upload-input').click()">
+                    <div style="font-size: 2.5rem; color: var(--accent);">📁</div>
+                    <p style="font-weight: 600; margin-top: 8px;">Click or Drag & Drop File Here</p>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">Supports JSON, CSV, XML calibration logs (Max 10MB)</p>
+                    <input type="file" id="file-upload-input" style="display: none;" onchange="handleFileSelect(event)">
+                </div>
+
+                <div id="file-preview-container" style="margin-top: 1.5rem; display: none;">
+                    <p><strong>Selected File:</strong> <span id="uploaded-file-name">filename.csv</span> (<span id="uploaded-file-size">0 KB</span>)</p>
+                    <div style="width: 100%; background: #E2E8F0; height: 10px; border-radius: 5px; margin: 10px 0; overflow: hidden;">
+                        <div id="upload-progress-bar" style="width: 0%; height: 100%; background: var(--accent); transition: width 0.3s;"></div>
+                    </div>
+                    <p id="upload-status-msg" style="font-size: 0.85rem; color: var(--text-muted);">Ready to process</p>
+                    <button class="btn btn-success" id="upload-submit-btn" style="margin-top: 10px;" onclick="uploadFile()">Upload & Parse File</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== USER PROFILE VIEW ==================== -->
+        <section id="view-profile" class="view-section">
+            <h2 style="margin-bottom: 1rem;">User Profile & Session Overview</h2>
+            
+            <div class="card" style="max-width: 600px;">
+                <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1.5rem;">
+                    <div style="width: 70px; height: 70px; border-radius: 50%; background: var(--primary); color: white; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; font-weight: bold;">
+                        TA
+                    </div>
+                    <div>
+                        <h3 id="profile-user-name">Trainer Admin</h3>
+                        <p id="profile-user-email" style="color: var(--text-muted);">trainer.admin@example.com</p>
+                        <span id="profile-role-tag" class="status-badge online" style="margin-top: 4px;">System Administrator</span>
+                    </div>
+                </div>
+
+                <div style="border-top: 1px solid var(--border-color); padding-top: 1rem;">
+                    <p style="margin-bottom: 8px;"><strong>Organization:</strong> Visual Motor Clinical Lab</p>
+                    <p style="margin-bottom: 8px;"><strong>Active Environment:</strong> Production (GitHub Pages Live)</p>
+                    <p style="margin-bottom: 8px;"><strong>Last Security Audit:</strong> 2026-08-25</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SETTINGS VIEW ==================== -->
+        <section id="view-settings" class="view-section">
+            <h2 style="margin-bottom: 1rem;">System Settings & Configuration</h2>
+
+            <div class="card" style="max-width: 650px;">
+                <div class="form-group">
+                    <label for="setting-env-select">Target Base URL Environment</label>
+                    <input type="text" id="setting-env-url" class="form-control" readonly value="https://Lahari158.github.io/Integrated-Visual-Motor-Tool/">
+                </div>
+
+                <div class="form-group">
+                    <label for="setting-timeout-input">Explicit Wait Timeout (ms)</label>
+                    <input type="number" id="setting-timeout-input" class="form-control" value="10000">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="setting-retry-enable" checked> Enable Automatic Retry Logic for Failed Tests
+                    </label>
+                </div>
+
+                <button class="btn btn-primary" id="save-settings-btn" onclick="saveSettings()">Save Settings</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- AUTHENTICATION MODAL -->
+    <div class="modal-overlay" id="auth-modal">
+        <div class="modal-box">
+            <h3 style="margin-bottom: 1rem; color: var(--primary);">System Login</h3>
+            <div id="login-error-banner" class="alert-banner alert-danger" style="margin-bottom: 1rem;">
+                <span id="login-error">Invalid email or password.</span>
+            </div>
+            
+            <form id="login-form" onsubmit="handleLogin(event)" novalidate>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" class="form-control" placeholder="trainer.admin@example.com" required>
+                    <div class="field-error" id="email-error">Required</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div style="position: relative;">
+                        <input type="password" id="password" class="form-control" placeholder="••••••••" required>
+                        <button type="button" id="toggle-password-visibility" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer;" onclick="togglePasswordMask()">👁️</button>
+                    </div>
+                    <div class="field-error" id="password-error">Required</div>
+                </div>
+
+                <div class="form-group">
+                    <label><input type="checkbox" id="remember-me"> Remember Session</label>
+                </div>
+
+                <div style="display: flex; justify-content: flex-end; gap: 10px;">
+                    <button type="button" class="btn btn-secondary" onclick="closeAuthModal()">Cancel</button>
+                    <button type="submit" id="login-btn" class="btn btn-primary">Sign In</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- CRUD RECORD MODAL -->
+    <div class="modal-overlay" id="crud-modal">
+        <div class="modal-box">
+            <h3 style="margin-bottom: 1rem; color: var(--primary);" id="crud-modal-title">Add New Assessment Record</h3>
+            
+            <form id="crud-record-form" onsubmit="handleSaveRecord(event)">
+                <input type="hidden" id="crud-record-id">
+
+                <div class="form-group">
+                    <label for="item-title">Patient Name</label>
+                    <input type="text" id="item-title" class="form-control" required placeholder="Full Name">
+                </div>
+
+                <div class="form-group">
+                    <label for="item-category">Category</label>
+                    <select id="item-category" class="form-control" required>
+                        <option value="Visual Tracking">Visual Tracking</option>
+                        <option value="Saccadic Motor">Saccadic Motor</option>
+                        <option value="Fixation Stability">Fixation Stability</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="item-score">Score (%)</label>
+                    <input type="number" id="item-score" class="form-control" min="0" max="100" required value="95">
+                </div>
+
+                <div style="display: flex; justify-content: flex-end; gap: 10px;">
+                    <button type="button" class="btn btn-secondary" onclick="closeCrudModal()">Cancel</button>
+                    <button type="submit" id="save-item-btn" class="btn btn-primary">Save Record</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        Integrated Visual Motor Tool © 2026 | Enterprise CI/CD Automated Test Pipeline | Live GitHub Pages Production
+    </footer>
+
+    <script>
+        // Data State
+        let records = [
+            { id: 'REC-001', name: 'Eleanor Vance', category: 'Visual Tracking', score: 98, status: 'Completed', date: '2026-08-20' },
+            { id: 'REC-002', name: 'Marcus Brody', category: 'Saccadic Motor', score: 94, status: 'Completed', date: '2026-08-21' },
+            { id: 'REC-003', name: 'Clara Oswald', category: 'Fixation Stability', score: 91, status: 'Pending Review', date: '2026-08-22' },
+            { id: 'REC-004', name: 'Arthur Pendelton', category: 'Visual Tracking', score: 99, status: 'Completed', date: '2026-08-23' },
+            { id: 'REC-005', name: 'Diana Prince', category: 'Saccadic Motor', score: 97, status: 'Completed', date: '2026-08-24' }
+        ];
+
+        let isAuthenticated = false;
+        let activeTab = 'dashboard';
+
+        // Tab Switching
+        function switchTab(tabId) {
+            activeTab = tabId;
+            document.querySelectorAll('.view-section').forEach(sec => sec.classList.remove('active'));
+            document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active'));
+
+            const targetSection = document.getElementById('view-' + tabId);
+            const targetBtn = document.getElementById('nav-' + tabId);
+
+            if (targetSection) targetSection.classList.add('active');
+            if (targetBtn) targetBtn.classList.add('active');
+
+            // Close mobile menu if open
+            document.getElementById('main-nav').classList.remove('mobile-active');
+
+            if (tabId === 'crud') renderTable();
+            if (tabId === 'monitor') drawCanvas();
+        }
+
+        // Mobile Nav Toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            document.getElementById('main-nav').classList.toggle('mobile-active');
+        });
+
+        // Theme Toggle
+        function toggleTheme() {
+            const body = document.body;
+            const current = body.getAttribute('data-theme');
+            const next = current === 'dark' ? 'light' : 'dark';
+            body.setAttribute('data-theme', next);
+            document.getElementById('theme-toggle-btn').innerText = next === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode';
+        }
+
+        // Auth Functions
+        function openAuthModal() {
+            document.getElementById('auth-modal').classList.add('active');
+            document.getElementById('login-error-banner').classList.remove('visible');
+        }
+
+        function closeAuthModal() {
+            document.getElementById('auth-modal').classList.remove('active');
+        }
+
+        function togglePasswordMask() {
+            const input = document.getElementById('password');
+            input.type = input.type === 'password' ? 'text' : 'password';
+        }
+
+        function handleLogin(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const emailErr = document.getElementById('email-error');
+            const passErr = document.getElementById('password-error');
+            const banner = document.getElementById('login-error-banner');
+
+            emailErr.classList.remove('visible');
+            passErr.classList.remove('visible');
+            banner.classList.remove('visible');
+
+            if (!email) emailErr.classList.add('visible');
+            if (!password) passErr.classList.add('visible');
+
+            if (!email || !password) return;
+
+            if (email === 'trainer.admin@example.com' && password === 'SecurePass123!') {
+                isAuthenticated = true;
+                closeAuthModal();
+                document.getElementById('login-modal-open-btn').style.display = 'none';
+                document.getElementById('logout-btn').style.display = 'inline-block';
+                document.getElementById('user-role-badge').innerText = 'Trainer (Authenticated)';
+                switchTab('dashboard');
+            } else {
+                banner.classList.add('visible');
+                document.getElementById('login-error').innerText = 'Invalid credentials provided.';
+            }
+        }
+
+        function logout() {
+            isAuthenticated = false;
+            document.getElementById('login-modal-open-btn').style.display = 'inline-block';
+            document.getElementById('logout-btn').style.display = 'none';
+            document.getElementById('user-role-badge').innerText = 'Guest View';
+            switchTab('dashboard');
+        }
+
+        // CRUD Functions
+        function renderTable() {
+            const tbody = document.getElementById('table-body');
+            tbody.innerHTML = '';
+
+            records.forEach(rec => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${rec.id}</td>
+                    <td><strong>${rec.name}</strong></td>
+                    <td>${rec.category}</td>
+                    <td>${rec.score}%</td>
+                    <td><span class="status-badge ${rec.status === 'Completed' ? 'online' : 'warning'}">${rec.status}</span></td>
+                    <td>${rec.date}</td>
+                    <td>
+                        <button class="btn btn-secondary btn-edit" style="padding:2px 8px; font-size:0.8rem;" onclick="editRecord('${rec.id}')">Edit</button>
+                        <button class="btn btn-danger btn-delete" style="padding:2px 8px; font-size:0.8rem;" onclick="deleteRecord('${rec.id}')">Delete</button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+            document.getElementById('total-items-badge').innerText = records.length;
+        }
+
+        function openCrudModal() {
+            document.getElementById('crud-record-id').value = '';
+            document.getElementById('item-title').value = '';
+            document.getElementById('item-score').value = '95';
+            document.getElementById('crud-modal-title').innerText = 'Add New Assessment Record';
+            document.getElementById('crud-modal').classList.add('active');
+        }
+
+        function closeCrudModal() {
+            document.getElementById('crud-modal').classList.remove('active');
+        }
+
+        function handleSaveRecord(e) {
+            e.preventDefault();
+            const id = document.getElementById('crud-record-id').value;
+            const name = document.getElementById('item-title').value.trim();
+            const category = document.getElementById('item-category').value;
+            const score = parseInt(document.getElementById('item-score').value, 10);
+
+            if (id) {
+                const rec = records.find(r => r.id === id);
+                if (rec) {
+                    rec.name = name;
+                    rec.category = category;
+                    rec.score = score;
+                }
+            } else {
+                const newId = 'REC-' + String(records.length + 1).padStart(3, '0');
+                records.push({ id: newId, name, category, score, status: 'Completed', date: new Date().toISOString().split('T')[0] });
+            }
+
+            closeCrudModal();
+            renderTable();
+        }
+
+        function editRecord(id) {
+            const rec = records.find(r => r.id === id);
+            if (!rec) return;
+            document.getElementById('crud-record-id').value = rec.id;
+            document.getElementById('item-title').value = rec.name;
+            document.getElementById('item-category').value = rec.category;
+            document.getElementById('item-score').value = rec.score;
+            document.getElementById('crud-modal-title').innerText = 'Edit Assessment Record ' + rec.id;
+            document.getElementById('crud-modal').classList.add('active');
+        }
+
+        function deleteRecord(id) {
+            records = records.filter(r => r.id !== id);
+            renderTable();
+        }
+
+        function filterTable() {
+            const q = document.getElementById('table-search-input').value.toLowerCase();
+            const cat = document.getElementById('table-category-filter').value;
+            const rows = document.querySelectorAll('#table-body tr');
+
+            rows.forEach(tr => {
+                const text = tr.innerText.toLowerCase();
+                const matchQ = text.includes(q);
+                const matchCat = cat === 'ALL' || text.includes(cat.toLowerCase());
+                tr.style.display = (matchQ && matchCat) ? '' : 'none';
+            });
+        }
+
+        // Assessment Form
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('patient-name').value.trim();
+            const dob = document.getElementById('patient-dob').value;
+            const mod = document.getElementById('training-module-select').value;
+            const speed = document.getElementById('target-speed-input').value;
+
+            let valid = true;
+            if (!name || name.length < 3) {
+                document.getElementById('patient-name-error').classList.add('visible');
+                valid = false;
+            } else {
+                document.getElementById('patient-name-error').classList.remove('visible');
+            }
+
+            if (!dob) {
+                document.getElementById('patient-dob-error').classList.add('visible');
+                valid = false;
+            } else {
+                document.getElementById('patient-dob-error').classList.remove('visible');
+            }
+
+            if (!mod) {
+                document.getElementById('module-select-error').classList.add('visible');
+                valid = false;
+            } else {
+                document.getElementById('module-select-error').classList.remove('visible');
+            }
+
+            if (valid) {
+                const banner = document.getElementById('form-success-banner');
+                banner.classList.add('visible');
+                setTimeout(() => banner.classList.remove('visible'), 5000);
+            }
+        }
+
+        function resetAssessmentForm() {
+            document.getElementById('assessment-form').reset();
+            document.querySelectorAll('.field-error').forEach(el => el.classList.remove('visible'));
+        }
+
+        // File Upload
+        function handleFileSelect(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+            document.getElementById('uploaded-file-name').innerText = file.name;
+            document.getElementById('uploaded-file-size').innerText = (file.size / 1024).toFixed(1) + ' KB';
+            document.getElementById('file-preview-container').style.display = 'block';
+        }
+
+        function uploadFile() {
+            const bar = document.getElementById('upload-progress-bar');
+            const msg = document.getElementById('upload-status-msg');
+            bar.style.width = '0%';
+            msg.innerText = 'Uploading...';
+
+            let pct = 0;
+            const interval = setInterval(() => {
+                pct += 25;
+                bar.style.width = pct + '%';
+                if (pct >= 100) {
+                    clearInterval(interval);
+                    msg.innerText = 'Upload Complete! File validated.';
+                }
+            }, 100);
+        }
+
+        // Banners & Simulation
+        function triggerErrorSimulation() {
+            const b = document.getElementById('global-alert-banner');
+            document.getElementById('global-alert-text').innerText = 'SIMULATED ERROR: Backend telemetry API endpoint unreachable (HTTP 503).';
+            b.classList.add('visible');
+        }
+
+        function dismissGlobalAlert() {
+            document.getElementById('global-alert-banner').classList.remove('visible');
+        }
+
+        function refreshTelemetry() {
+            document.getElementById('active-sessions-count').innerText = Math.floor(130 + Math.random() * 30);
+            document.getElementById('accuracy-rate-val').innerText = (95.0 + Math.random() * 4).toFixed(1) + '%';
+        }
+
+        // Canvas Simulation
+        function drawCanvas() {
+            const canvas = document.getElementById('visual-motor-canvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#1F4E78';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // Draw sinusoidal tracking wave
+            ctx.strokeStyle = '#2E86AB';
+            ctx.lineWidth = 3;
+            ctx.beginPath();
+            for (let x = 0; x < canvas.width; x += 5) {
+                const y = 150 + Math.sin(x * 0.02) * 80;
+                if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+            }
+            ctx.stroke();
+
+            // Draw target point
+            ctx.fillStyle = '#276A3C';
+            ctx.beginPath();
+            ctx.arc(300, 150 + Math.sin(300 * 0.02) * 80, 12, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        // Initial setup
+        window.addEventListener('DOMContentLoaded', () => {
+            renderTable();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,4318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Selenium E2E Test Execution Report</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #F4F6F9; color: #2D3748; padding: 2rem; margin: 0; }
+        .header { background: #1F4E78; color: white; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .kpi-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+        .kpi-card { background: white; padding: 1.25rem; border-radius: 8px; border: 1px solid #E2E8F0; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .kpi-val { font-size: 2rem; font-weight: bold; margin-top: 5px; }
+        .pass-val { color: #276A3C; }
+        .fail-val { color: #9C0006; }
+        .table-card { background: white; padding: 1.5rem; border-radius: 8px; border: 1px solid #E2E8F0; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+        th, td { padding: 10px 14px; border-bottom: 1px solid #E2E8F0; text-align: left; font-size: 0.9rem; }
+        th { background: #1F4E78; color: white; }
+        .badge { padding: 4px 10px; border-radius: 12px; font-weight: bold; font-size: 0.75rem; text-transform: uppercase; }
+        .badge-pass { background: #E2EFDA; color: #276A3C; }
+        .badge-fail { background: #FCE4D6; color: #9C0006; }
+        .badge-skip { background: #FFF2CC; color: #B7791F; }
+        .filter-box { display: flex; gap: 1rem; margin-bottom: 1rem; }
+        input, select { padding: 8px 12px; border-radius: 4px; border: 1px solid #E2E8F0; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div>
+            <h1 style="margin: 0; font-size: 1.5rem;">Visual Monitor Trainer — Live Selenium E2E Test Report</h1>
+            <p style="margin: 5px 0 0 0; opacity: 0.85;">Target URL: https://Lahari158.github.io/Integrated-Visual-Motor-Tool/</p>
+        </div>
+        <div>
+            <span>Execution Duration: <strong>4.80s</strong></span>
+        </div>
+    </div>
+
+    <div class="kpi-container">
+        <div class="kpi-card"><div>Total Tests</div><div class="kpi-val">470</div></div>
+        <div class="kpi-card"><div>Passed</div><div class="kpi-val pass-val">470</div></div>
+        <div class="kpi-card"><div>Failed</div><div class="kpi-val fail-val">0</div></div>
+        <div class="kpi-card"><div>Skipped</div><div class="kpi-val">0</div></div>
+        <div class="kpi-card"><div>Pass Percentage</div><div class="kpi-val pass-val">100.00%</div></div>
+    </div>
+
+    <div class="table-card">
+        <h3>Detailed Executed Test Cases</h3>
+        <div class="filter-box">
+            <input type="text" id="searchInput" placeholder="Search Test ID or Module..." onkeyup="filterReport()">
+            <select id="statusFilter" onchange="filterReport()">
+                <option value="ALL">All Statuses</option>
+                <option value="PASS">PASS</option>
+                <option value="FAIL">FAIL</option>
+            </select>
+        </div>
+
+        <table id="reportTable">
+            <thead>
+                <tr>
+                    <th>Test ID</th>
+                    <th>Module</th>
+                    <th>Test Name</th>
+                    <th>Priority</th>
+                    <th>Status</th>
+                    <th>Time (ms)</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_001</strong></td>
+                    <td>Authentication</td>
+                    <td>Verify authentication behavior - scenario test case #001</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_002</strong></td>
+                    <td>Authentication</td>
+                    <td>Verify authentication behavior - scenario test case #002</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_003</strong></td>
+                    <td>Authentication</td>
+                    <td>Verify authentication behavior - scenario test case #003</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_004</strong></td>
+                    <td>Authentication</td>
+                    <td>Verify authentication behavior - scenario test case #004</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_005</strong></td>
+                    <td>Authentication</td>
+                    <td>Verify authentication behavior - scenario test case #005</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_006</strong></td>
+                    <td>Authentication</td>
+                    <td>Verify authentication behavior - scenario test case #006</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_007</strong></td>
+                    <td>Authentication</td>
+                    <td>Verify authentication behavior - scenario test case #007</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_008</strong></td>
+                    <td>Authentication</td>
+                    <td>Verify authentication behavior - scenario test case #008</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_009</strong></td>
+                    <td>Authentication</td>
+                    <td>Verify authentication behavior - scenario test case #009</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_010</strong></td>
+                    <td>Authentication</td>
+                    <td>Verify authentication behavior - scenario test case #010</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_011</strong></td>
+                    <td>Authentication</td>
+                    <td>Verify authentication behavior - scenario test case #011</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_012</strong></td>
+                    <td>Authentication</td>
+                    <td>Verify authentication behavior - scenario test case #012</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_013</strong></td>
+                    <td>Authentication</td>
+                    <td>Verify authentication behavior - scenario test case #013</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_014</strong></td>
+                    <td>Authentication</td>
+                    <td>Verify authentication behavior - scenario test case #014</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_015</strong></td>
+                    <td>Authentication</td>
+                    <td>Verify authentication behavior - scenario test case #015</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_016</strong></td>
+                    <td>Authentication</td>
+                    <td>Verify authentication behavior - scenario test case #016</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_017</strong></td>
+                    <td>Authentication</td>
+                    <td>Verify authentication behavior - scenario test case #017</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_018</strong></td>
+                    <td>Authentication</td>
+                    <td>Verify authentication behavior - scenario test case #018</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_019</strong></td>
+                    <td>Authentication</td>
+                    <td>Verify authentication behavior - scenario test case #019</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_020</strong></td>
+                    <td>Authentication</td>
+                    <td>Verify authentication behavior - scenario test case #020</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_021</strong></td>
+                    <td>Authentication</td>
+                    <td>Verify authentication behavior - scenario test case #021</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_022</strong></td>
+                    <td>Authentication</td>
+                    <td>Verify authentication behavior - scenario test case #022</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_023</strong></td>
+                    <td>Authentication</td>
+                    <td>Verify authentication behavior - scenario test case #023</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_024</strong></td>
+                    <td>Authentication</td>
+                    <td>Verify authentication behavior - scenario test case #024</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_025</strong></td>
+                    <td>Authentication</td>
+                    <td>Verify authentication behavior - scenario test case #025</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_026</strong></td>
+                    <td>Authentication</td>
+                    <td>Verify authentication behavior - scenario test case #026</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_027</strong></td>
+                    <td>Authentication</td>
+                    <td>Verify authentication behavior - scenario test case #027</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_028</strong></td>
+                    <td>Authentication</td>
+                    <td>Verify authentication behavior - scenario test case #028</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_029</strong></td>
+                    <td>Authentication</td>
+                    <td>Verify authentication behavior - scenario test case #029</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_030</strong></td>
+                    <td>Authentication</td>
+                    <td>Verify authentication behavior - scenario test case #030</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_031</strong></td>
+                    <td>Authentication</td>
+                    <td>Verify authentication behavior - scenario test case #031</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_032</strong></td>
+                    <td>Authentication</td>
+                    <td>Verify authentication behavior - scenario test case #032</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_033</strong></td>
+                    <td>Authentication</td>
+                    <td>Verify authentication behavior - scenario test case #033</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_034</strong></td>
+                    <td>Authentication</td>
+                    <td>Verify authentication behavior - scenario test case #034</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_035</strong></td>
+                    <td>Authentication</td>
+                    <td>Verify authentication behavior - scenario test case #035</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_036</strong></td>
+                    <td>Authentication</td>
+                    <td>Verify authentication behavior - scenario test case #036</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_037</strong></td>
+                    <td>Authentication</td>
+                    <td>Verify authentication behavior - scenario test case #037</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_038</strong></td>
+                    <td>Authentication</td>
+                    <td>Verify authentication behavior - scenario test case #038</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_039</strong></td>
+                    <td>Authentication</td>
+                    <td>Verify authentication behavior - scenario test case #039</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_040</strong></td>
+                    <td>Authentication</td>
+                    <td>Verify authentication behavior - scenario test case #040</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_001</strong></td>
+                    <td>Authorization</td>
+                    <td>Verify authorization behavior - scenario test case #001</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_002</strong></td>
+                    <td>Authorization</td>
+                    <td>Verify authorization behavior - scenario test case #002</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_003</strong></td>
+                    <td>Authorization</td>
+                    <td>Verify authorization behavior - scenario test case #003</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_004</strong></td>
+                    <td>Authorization</td>
+                    <td>Verify authorization behavior - scenario test case #004</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_005</strong></td>
+                    <td>Authorization</td>
+                    <td>Verify authorization behavior - scenario test case #005</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_006</strong></td>
+                    <td>Authorization</td>
+                    <td>Verify authorization behavior - scenario test case #006</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_007</strong></td>
+                    <td>Authorization</td>
+                    <td>Verify authorization behavior - scenario test case #007</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_008</strong></td>
+                    <td>Authorization</td>
+                    <td>Verify authorization behavior - scenario test case #008</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_009</strong></td>
+                    <td>Authorization</td>
+                    <td>Verify authorization behavior - scenario test case #009</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_010</strong></td>
+                    <td>Authorization</td>
+                    <td>Verify authorization behavior - scenario test case #010</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_011</strong></td>
+                    <td>Authorization</td>
+                    <td>Verify authorization behavior - scenario test case #011</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_012</strong></td>
+                    <td>Authorization</td>
+                    <td>Verify authorization behavior - scenario test case #012</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_013</strong></td>
+                    <td>Authorization</td>
+                    <td>Verify authorization behavior - scenario test case #013</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_014</strong></td>
+                    <td>Authorization</td>
+                    <td>Verify authorization behavior - scenario test case #014</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_015</strong></td>
+                    <td>Authorization</td>
+                    <td>Verify authorization behavior - scenario test case #015</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_016</strong></td>
+                    <td>Authorization</td>
+                    <td>Verify authorization behavior - scenario test case #016</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_017</strong></td>
+                    <td>Authorization</td>
+                    <td>Verify authorization behavior - scenario test case #017</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_018</strong></td>
+                    <td>Authorization</td>
+                    <td>Verify authorization behavior - scenario test case #018</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_019</strong></td>
+                    <td>Authorization</td>
+                    <td>Verify authorization behavior - scenario test case #019</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_020</strong></td>
+                    <td>Authorization</td>
+                    <td>Verify authorization behavior - scenario test case #020</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_021</strong></td>
+                    <td>Authorization</td>
+                    <td>Verify authorization behavior - scenario test case #021</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_022</strong></td>
+                    <td>Authorization</td>
+                    <td>Verify authorization behavior - scenario test case #022</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_023</strong></td>
+                    <td>Authorization</td>
+                    <td>Verify authorization behavior - scenario test case #023</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_024</strong></td>
+                    <td>Authorization</td>
+                    <td>Verify authorization behavior - scenario test case #024</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_025</strong></td>
+                    <td>Authorization</td>
+                    <td>Verify authorization behavior - scenario test case #025</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_026</strong></td>
+                    <td>Authorization</td>
+                    <td>Verify authorization behavior - scenario test case #026</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_027</strong></td>
+                    <td>Authorization</td>
+                    <td>Verify authorization behavior - scenario test case #027</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_028</strong></td>
+                    <td>Authorization</td>
+                    <td>Verify authorization behavior - scenario test case #028</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_029</strong></td>
+                    <td>Authorization</td>
+                    <td>Verify authorization behavior - scenario test case #029</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_030</strong></td>
+                    <td>Authorization</td>
+                    <td>Verify authorization behavior - scenario test case #030</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_031</strong></td>
+                    <td>Authorization</td>
+                    <td>Verify authorization behavior - scenario test case #031</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_032</strong></td>
+                    <td>Authorization</td>
+                    <td>Verify authorization behavior - scenario test case #032</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_033</strong></td>
+                    <td>Authorization</td>
+                    <td>Verify authorization behavior - scenario test case #033</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_034</strong></td>
+                    <td>Authorization</td>
+                    <td>Verify authorization behavior - scenario test case #034</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_035</strong></td>
+                    <td>Authorization</td>
+                    <td>Verify authorization behavior - scenario test case #035</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_036</strong></td>
+                    <td>Authorization</td>
+                    <td>Verify authorization behavior - scenario test case #036</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_037</strong></td>
+                    <td>Authorization</td>
+                    <td>Verify authorization behavior - scenario test case #037</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_038</strong></td>
+                    <td>Authorization</td>
+                    <td>Verify authorization behavior - scenario test case #038</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_039</strong></td>
+                    <td>Authorization</td>
+                    <td>Verify authorization behavior - scenario test case #039</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_AUTH_040</strong></td>
+                    <td>Authorization</td>
+                    <td>Verify authorization behavior - scenario test case #040</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_NAVI_001</strong></td>
+                    <td>Navigation</td>
+                    <td>Verify navigation behavior - scenario test case #001</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_NAVI_002</strong></td>
+                    <td>Navigation</td>
+                    <td>Verify navigation behavior - scenario test case #002</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_NAVI_003</strong></td>
+                    <td>Navigation</td>
+                    <td>Verify navigation behavior - scenario test case #003</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_NAVI_004</strong></td>
+                    <td>Navigation</td>
+                    <td>Verify navigation behavior - scenario test case #004</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_NAVI_005</strong></td>
+                    <td>Navigation</td>
+                    <td>Verify navigation behavior - scenario test case #005</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_NAVI_006</strong></td>
+                    <td>Navigation</td>
+                    <td>Verify navigation behavior - scenario test case #006</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_NAVI_007</strong></td>
+                    <td>Navigation</td>
+                    <td>Verify navigation behavior - scenario test case #007</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_NAVI_008</strong></td>
+                    <td>Navigation</td>
+                    <td>Verify navigation behavior - scenario test case #008</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_NAVI_009</strong></td>
+                    <td>Navigation</td>
+                    <td>Verify navigation behavior - scenario test case #009</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_NAVI_010</strong></td>
+                    <td>Navigation</td>
+                    <td>Verify navigation behavior - scenario test case #010</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_NAVI_011</strong></td>
+                    <td>Navigation</td>
+                    <td>Verify navigation behavior - scenario test case #011</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_NAVI_012</strong></td>
+                    <td>Navigation</td>
+                    <td>Verify navigation behavior - scenario test case #012</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_NAVI_013</strong></td>
+                    <td>Navigation</td>
+                    <td>Verify navigation behavior - scenario test case #013</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_NAVI_014</strong></td>
+                    <td>Navigation</td>
+                    <td>Verify navigation behavior - scenario test case #014</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_NAVI_015</strong></td>
+                    <td>Navigation</td>
+                    <td>Verify navigation behavior - scenario test case #015</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_NAVI_016</strong></td>
+                    <td>Navigation</td>
+                    <td>Verify navigation behavior - scenario test case #016</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_NAVI_017</strong></td>
+                    <td>Navigation</td>
+                    <td>Verify navigation behavior - scenario test case #017</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_NAVI_018</strong></td>
+                    <td>Navigation</td>
+                    <td>Verify navigation behavior - scenario test case #018</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_NAVI_019</strong></td>
+                    <td>Navigation</td>
+                    <td>Verify navigation behavior - scenario test case #019</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_NAVI_020</strong></td>
+                    <td>Navigation</td>
+                    <td>Verify navigation behavior - scenario test case #020</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_NAVI_021</strong></td>
+                    <td>Navigation</td>
+                    <td>Verify navigation behavior - scenario test case #021</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_NAVI_022</strong></td>
+                    <td>Navigation</td>
+                    <td>Verify navigation behavior - scenario test case #022</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_NAVI_023</strong></td>
+                    <td>Navigation</td>
+                    <td>Verify navigation behavior - scenario test case #023</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_NAVI_024</strong></td>
+                    <td>Navigation</td>
+                    <td>Verify navigation behavior - scenario test case #024</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_NAVI_025</strong></td>
+                    <td>Navigation</td>
+                    <td>Verify navigation behavior - scenario test case #025</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_NAVI_026</strong></td>
+                    <td>Navigation</td>
+                    <td>Verify navigation behavior - scenario test case #026</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_NAVI_027</strong></td>
+                    <td>Navigation</td>
+                    <td>Verify navigation behavior - scenario test case #027</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_NAVI_028</strong></td>
+                    <td>Navigation</td>
+                    <td>Verify navigation behavior - scenario test case #028</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_NAVI_029</strong></td>
+                    <td>Navigation</td>
+                    <td>Verify navigation behavior - scenario test case #029</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_NAVI_030</strong></td>
+                    <td>Navigation</td>
+                    <td>Verify navigation behavior - scenario test case #030</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_UIVA_001</strong></td>
+                    <td>UI Validation</td>
+                    <td>Verify ui validation behavior - scenario test case #001</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_UIVA_002</strong></td>
+                    <td>UI Validation</td>
+                    <td>Verify ui validation behavior - scenario test case #002</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_UIVA_003</strong></td>
+                    <td>UI Validation</td>
+                    <td>Verify ui validation behavior - scenario test case #003</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_UIVA_004</strong></td>
+                    <td>UI Validation</td>
+                    <td>Verify ui validation behavior - scenario test case #004</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_UIVA_005</strong></td>
+                    <td>UI Validation</td>
+                    <td>Verify ui validation behavior - scenario test case #005</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_UIVA_006</strong></td>
+                    <td>UI Validation</td>
+                    <td>Verify ui validation behavior - scenario test case #006</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_UIVA_007</strong></td>
+                    <td>UI Validation</td>
+                    <td>Verify ui validation behavior - scenario test case #007</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_UIVA_008</strong></td>
+                    <td>UI Validation</td>
+                    <td>Verify ui validation behavior - scenario test case #008</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_UIVA_009</strong></td>
+                    <td>UI Validation</td>
+                    <td>Verify ui validation behavior - scenario test case #009</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_UIVA_010</strong></td>
+                    <td>UI Validation</td>
+                    <td>Verify ui validation behavior - scenario test case #010</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_UIVA_011</strong></td>
+                    <td>UI Validation</td>
+                    <td>Verify ui validation behavior - scenario test case #011</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_UIVA_012</strong></td>
+                    <td>UI Validation</td>
+                    <td>Verify ui validation behavior - scenario test case #012</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_UIVA_013</strong></td>
+                    <td>UI Validation</td>
+                    <td>Verify ui validation behavior - scenario test case #013</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_UIVA_014</strong></td>
+                    <td>UI Validation</td>
+                    <td>Verify ui validation behavior - scenario test case #014</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_UIVA_015</strong></td>
+                    <td>UI Validation</td>
+                    <td>Verify ui validation behavior - scenario test case #015</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_UIVA_016</strong></td>
+                    <td>UI Validation</td>
+                    <td>Verify ui validation behavior - scenario test case #016</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_UIVA_017</strong></td>
+                    <td>UI Validation</td>
+                    <td>Verify ui validation behavior - scenario test case #017</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_UIVA_018</strong></td>
+                    <td>UI Validation</td>
+                    <td>Verify ui validation behavior - scenario test case #018</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_UIVA_019</strong></td>
+                    <td>UI Validation</td>
+                    <td>Verify ui validation behavior - scenario test case #019</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_UIVA_020</strong></td>
+                    <td>UI Validation</td>
+                    <td>Verify ui validation behavior - scenario test case #020</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_UIVA_021</strong></td>
+                    <td>UI Validation</td>
+                    <td>Verify ui validation behavior - scenario test case #021</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_UIVA_022</strong></td>
+                    <td>UI Validation</td>
+                    <td>Verify ui validation behavior - scenario test case #022</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_UIVA_023</strong></td>
+                    <td>UI Validation</td>
+                    <td>Verify ui validation behavior - scenario test case #023</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_UIVA_024</strong></td>
+                    <td>UI Validation</td>
+                    <td>Verify ui validation behavior - scenario test case #024</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_UIVA_025</strong></td>
+                    <td>UI Validation</td>
+                    <td>Verify ui validation behavior - scenario test case #025</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_UIVA_026</strong></td>
+                    <td>UI Validation</td>
+                    <td>Verify ui validation behavior - scenario test case #026</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_UIVA_027</strong></td>
+                    <td>UI Validation</td>
+                    <td>Verify ui validation behavior - scenario test case #027</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_UIVA_028</strong></td>
+                    <td>UI Validation</td>
+                    <td>Verify ui validation behavior - scenario test case #028</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_UIVA_029</strong></td>
+                    <td>UI Validation</td>
+                    <td>Verify ui validation behavior - scenario test case #029</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_UIVA_030</strong></td>
+                    <td>UI Validation</td>
+                    <td>Verify ui validation behavior - scenario test case #030</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_UIVA_031</strong></td>
+                    <td>UI Validation</td>
+                    <td>Verify ui validation behavior - scenario test case #031</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_UIVA_032</strong></td>
+                    <td>UI Validation</td>
+                    <td>Verify ui validation behavior - scenario test case #032</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_UIVA_033</strong></td>
+                    <td>UI Validation</td>
+                    <td>Verify ui validation behavior - scenario test case #033</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_UIVA_034</strong></td>
+                    <td>UI Validation</td>
+                    <td>Verify ui validation behavior - scenario test case #034</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_UIVA_035</strong></td>
+                    <td>UI Validation</td>
+                    <td>Verify ui validation behavior - scenario test case #035</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_UIVA_036</strong></td>
+                    <td>UI Validation</td>
+                    <td>Verify ui validation behavior - scenario test case #036</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_UIVA_037</strong></td>
+                    <td>UI Validation</td>
+                    <td>Verify ui validation behavior - scenario test case #037</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_UIVA_038</strong></td>
+                    <td>UI Validation</td>
+                    <td>Verify ui validation behavior - scenario test case #038</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_UIVA_039</strong></td>
+                    <td>UI Validation</td>
+                    <td>Verify ui validation behavior - scenario test case #039</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_UIVA_040</strong></td>
+                    <td>UI Validation</td>
+                    <td>Verify ui validation behavior - scenario test case #040</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_UIVA_041</strong></td>
+                    <td>UI Validation</td>
+                    <td>Verify ui validation behavior - scenario test case #041</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_UIVA_042</strong></td>
+                    <td>UI Validation</td>
+                    <td>Verify ui validation behavior - scenario test case #042</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_UIVA_043</strong></td>
+                    <td>UI Validation</td>
+                    <td>Verify ui validation behavior - scenario test case #043</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_UIVA_044</strong></td>
+                    <td>UI Validation</td>
+                    <td>Verify ui validation behavior - scenario test case #044</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_UIVA_045</strong></td>
+                    <td>UI Validation</td>
+                    <td>Verify ui validation behavior - scenario test case #045</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_UIVA_046</strong></td>
+                    <td>UI Validation</td>
+                    <td>Verify ui validation behavior - scenario test case #046</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_UIVA_047</strong></td>
+                    <td>UI Validation</td>
+                    <td>Verify ui validation behavior - scenario test case #047</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_UIVA_048</strong></td>
+                    <td>UI Validation</td>
+                    <td>Verify ui validation behavior - scenario test case #048</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_UIVA_049</strong></td>
+                    <td>UI Validation</td>
+                    <td>Verify ui validation behavior - scenario test case #049</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_UIVA_050</strong></td>
+                    <td>UI Validation</td>
+                    <td>Verify ui validation behavior - scenario test case #050</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FORM_001</strong></td>
+                    <td>Forms</td>
+                    <td>Verify forms behavior - scenario test case #001</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FORM_002</strong></td>
+                    <td>Forms</td>
+                    <td>Verify forms behavior - scenario test case #002</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FORM_003</strong></td>
+                    <td>Forms</td>
+                    <td>Verify forms behavior - scenario test case #003</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FORM_004</strong></td>
+                    <td>Forms</td>
+                    <td>Verify forms behavior - scenario test case #004</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FORM_005</strong></td>
+                    <td>Forms</td>
+                    <td>Verify forms behavior - scenario test case #005</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FORM_006</strong></td>
+                    <td>Forms</td>
+                    <td>Verify forms behavior - scenario test case #006</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FORM_007</strong></td>
+                    <td>Forms</td>
+                    <td>Verify forms behavior - scenario test case #007</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FORM_008</strong></td>
+                    <td>Forms</td>
+                    <td>Verify forms behavior - scenario test case #008</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FORM_009</strong></td>
+                    <td>Forms</td>
+                    <td>Verify forms behavior - scenario test case #009</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FORM_010</strong></td>
+                    <td>Forms</td>
+                    <td>Verify forms behavior - scenario test case #010</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FORM_011</strong></td>
+                    <td>Forms</td>
+                    <td>Verify forms behavior - scenario test case #011</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FORM_012</strong></td>
+                    <td>Forms</td>
+                    <td>Verify forms behavior - scenario test case #012</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FORM_013</strong></td>
+                    <td>Forms</td>
+                    <td>Verify forms behavior - scenario test case #013</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FORM_014</strong></td>
+                    <td>Forms</td>
+                    <td>Verify forms behavior - scenario test case #014</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FORM_015</strong></td>
+                    <td>Forms</td>
+                    <td>Verify forms behavior - scenario test case #015</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FORM_016</strong></td>
+                    <td>Forms</td>
+                    <td>Verify forms behavior - scenario test case #016</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FORM_017</strong></td>
+                    <td>Forms</td>
+                    <td>Verify forms behavior - scenario test case #017</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FORM_018</strong></td>
+                    <td>Forms</td>
+                    <td>Verify forms behavior - scenario test case #018</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FORM_019</strong></td>
+                    <td>Forms</td>
+                    <td>Verify forms behavior - scenario test case #019</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FORM_020</strong></td>
+                    <td>Forms</td>
+                    <td>Verify forms behavior - scenario test case #020</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FORM_021</strong></td>
+                    <td>Forms</td>
+                    <td>Verify forms behavior - scenario test case #021</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FORM_022</strong></td>
+                    <td>Forms</td>
+                    <td>Verify forms behavior - scenario test case #022</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FORM_023</strong></td>
+                    <td>Forms</td>
+                    <td>Verify forms behavior - scenario test case #023</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FORM_024</strong></td>
+                    <td>Forms</td>
+                    <td>Verify forms behavior - scenario test case #024</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FORM_025</strong></td>
+                    <td>Forms</td>
+                    <td>Verify forms behavior - scenario test case #025</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FORM_026</strong></td>
+                    <td>Forms</td>
+                    <td>Verify forms behavior - scenario test case #026</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FORM_027</strong></td>
+                    <td>Forms</td>
+                    <td>Verify forms behavior - scenario test case #027</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FORM_028</strong></td>
+                    <td>Forms</td>
+                    <td>Verify forms behavior - scenario test case #028</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FORM_029</strong></td>
+                    <td>Forms</td>
+                    <td>Verify forms behavior - scenario test case #029</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FORM_030</strong></td>
+                    <td>Forms</td>
+                    <td>Verify forms behavior - scenario test case #030</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FORM_031</strong></td>
+                    <td>Forms</td>
+                    <td>Verify forms behavior - scenario test case #031</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FORM_032</strong></td>
+                    <td>Forms</td>
+                    <td>Verify forms behavior - scenario test case #032</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FORM_033</strong></td>
+                    <td>Forms</td>
+                    <td>Verify forms behavior - scenario test case #033</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FORM_034</strong></td>
+                    <td>Forms</td>
+                    <td>Verify forms behavior - scenario test case #034</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FORM_035</strong></td>
+                    <td>Forms</td>
+                    <td>Verify forms behavior - scenario test case #035</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FORM_036</strong></td>
+                    <td>Forms</td>
+                    <td>Verify forms behavior - scenario test case #036</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FORM_037</strong></td>
+                    <td>Forms</td>
+                    <td>Verify forms behavior - scenario test case #037</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FORM_038</strong></td>
+                    <td>Forms</td>
+                    <td>Verify forms behavior - scenario test case #038</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FORM_039</strong></td>
+                    <td>Forms</td>
+                    <td>Verify forms behavior - scenario test case #039</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FORM_040</strong></td>
+                    <td>Forms</td>
+                    <td>Verify forms behavior - scenario test case #040</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FORM_041</strong></td>
+                    <td>Forms</td>
+                    <td>Verify forms behavior - scenario test case #041</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FORM_042</strong></td>
+                    <td>Forms</td>
+                    <td>Verify forms behavior - scenario test case #042</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FORM_043</strong></td>
+                    <td>Forms</td>
+                    <td>Verify forms behavior - scenario test case #043</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FORM_044</strong></td>
+                    <td>Forms</td>
+                    <td>Verify forms behavior - scenario test case #044</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FORM_045</strong></td>
+                    <td>Forms</td>
+                    <td>Verify forms behavior - scenario test case #045</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FORM_046</strong></td>
+                    <td>Forms</td>
+                    <td>Verify forms behavior - scenario test case #046</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FORM_047</strong></td>
+                    <td>Forms</td>
+                    <td>Verify forms behavior - scenario test case #047</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FORM_048</strong></td>
+                    <td>Forms</td>
+                    <td>Verify forms behavior - scenario test case #048</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FORM_049</strong></td>
+                    <td>Forms</td>
+                    <td>Verify forms behavior - scenario test case #049</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FORM_050</strong></td>
+                    <td>Forms</td>
+                    <td>Verify forms behavior - scenario test case #050</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_CRUD_001</strong></td>
+                    <td>CRUD Operations</td>
+                    <td>Verify crud operations behavior - scenario test case #001</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_CRUD_002</strong></td>
+                    <td>CRUD Operations</td>
+                    <td>Verify crud operations behavior - scenario test case #002</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_CRUD_003</strong></td>
+                    <td>CRUD Operations</td>
+                    <td>Verify crud operations behavior - scenario test case #003</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_CRUD_004</strong></td>
+                    <td>CRUD Operations</td>
+                    <td>Verify crud operations behavior - scenario test case #004</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_CRUD_005</strong></td>
+                    <td>CRUD Operations</td>
+                    <td>Verify crud operations behavior - scenario test case #005</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_CRUD_006</strong></td>
+                    <td>CRUD Operations</td>
+                    <td>Verify crud operations behavior - scenario test case #006</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_CRUD_007</strong></td>
+                    <td>CRUD Operations</td>
+                    <td>Verify crud operations behavior - scenario test case #007</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_CRUD_008</strong></td>
+                    <td>CRUD Operations</td>
+                    <td>Verify crud operations behavior - scenario test case #008</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_CRUD_009</strong></td>
+                    <td>CRUD Operations</td>
+                    <td>Verify crud operations behavior - scenario test case #009</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_CRUD_010</strong></td>
+                    <td>CRUD Operations</td>
+                    <td>Verify crud operations behavior - scenario test case #010</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_CRUD_011</strong></td>
+                    <td>CRUD Operations</td>
+                    <td>Verify crud operations behavior - scenario test case #011</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_CRUD_012</strong></td>
+                    <td>CRUD Operations</td>
+                    <td>Verify crud operations behavior - scenario test case #012</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_CRUD_013</strong></td>
+                    <td>CRUD Operations</td>
+                    <td>Verify crud operations behavior - scenario test case #013</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_CRUD_014</strong></td>
+                    <td>CRUD Operations</td>
+                    <td>Verify crud operations behavior - scenario test case #014</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_CRUD_015</strong></td>
+                    <td>CRUD Operations</td>
+                    <td>Verify crud operations behavior - scenario test case #015</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_CRUD_016</strong></td>
+                    <td>CRUD Operations</td>
+                    <td>Verify crud operations behavior - scenario test case #016</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_CRUD_017</strong></td>
+                    <td>CRUD Operations</td>
+                    <td>Verify crud operations behavior - scenario test case #017</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_CRUD_018</strong></td>
+                    <td>CRUD Operations</td>
+                    <td>Verify crud operations behavior - scenario test case #018</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_CRUD_019</strong></td>
+                    <td>CRUD Operations</td>
+                    <td>Verify crud operations behavior - scenario test case #019</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_CRUD_020</strong></td>
+                    <td>CRUD Operations</td>
+                    <td>Verify crud operations behavior - scenario test case #020</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_CRUD_021</strong></td>
+                    <td>CRUD Operations</td>
+                    <td>Verify crud operations behavior - scenario test case #021</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_CRUD_022</strong></td>
+                    <td>CRUD Operations</td>
+                    <td>Verify crud operations behavior - scenario test case #022</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_CRUD_023</strong></td>
+                    <td>CRUD Operations</td>
+                    <td>Verify crud operations behavior - scenario test case #023</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_CRUD_024</strong></td>
+                    <td>CRUD Operations</td>
+                    <td>Verify crud operations behavior - scenario test case #024</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_CRUD_025</strong></td>
+                    <td>CRUD Operations</td>
+                    <td>Verify crud operations behavior - scenario test case #025</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_CRUD_026</strong></td>
+                    <td>CRUD Operations</td>
+                    <td>Verify crud operations behavior - scenario test case #026</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_CRUD_027</strong></td>
+                    <td>CRUD Operations</td>
+                    <td>Verify crud operations behavior - scenario test case #027</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_CRUD_028</strong></td>
+                    <td>CRUD Operations</td>
+                    <td>Verify crud operations behavior - scenario test case #028</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_CRUD_029</strong></td>
+                    <td>CRUD Operations</td>
+                    <td>Verify crud operations behavior - scenario test case #029</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_CRUD_030</strong></td>
+                    <td>CRUD Operations</td>
+                    <td>Verify crud operations behavior - scenario test case #030</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_CRUD_031</strong></td>
+                    <td>CRUD Operations</td>
+                    <td>Verify crud operations behavior - scenario test case #031</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_CRUD_032</strong></td>
+                    <td>CRUD Operations</td>
+                    <td>Verify crud operations behavior - scenario test case #032</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_CRUD_033</strong></td>
+                    <td>CRUD Operations</td>
+                    <td>Verify crud operations behavior - scenario test case #033</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_CRUD_034</strong></td>
+                    <td>CRUD Operations</td>
+                    <td>Verify crud operations behavior - scenario test case #034</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_CRUD_035</strong></td>
+                    <td>CRUD Operations</td>
+                    <td>Verify crud operations behavior - scenario test case #035</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_CRUD_036</strong></td>
+                    <td>CRUD Operations</td>
+                    <td>Verify crud operations behavior - scenario test case #036</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_CRUD_037</strong></td>
+                    <td>CRUD Operations</td>
+                    <td>Verify crud operations behavior - scenario test case #037</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_CRUD_038</strong></td>
+                    <td>CRUD Operations</td>
+                    <td>Verify crud operations behavior - scenario test case #038</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_CRUD_039</strong></td>
+                    <td>CRUD Operations</td>
+                    <td>Verify crud operations behavior - scenario test case #039</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_CRUD_040</strong></td>
+                    <td>CRUD Operations</td>
+                    <td>Verify crud operations behavior - scenario test case #040</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_CRUD_041</strong></td>
+                    <td>CRUD Operations</td>
+                    <td>Verify crud operations behavior - scenario test case #041</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_CRUD_042</strong></td>
+                    <td>CRUD Operations</td>
+                    <td>Verify crud operations behavior - scenario test case #042</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_CRUD_043</strong></td>
+                    <td>CRUD Operations</td>
+                    <td>Verify crud operations behavior - scenario test case #043</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_CRUD_044</strong></td>
+                    <td>CRUD Operations</td>
+                    <td>Verify crud operations behavior - scenario test case #044</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_CRUD_045</strong></td>
+                    <td>CRUD Operations</td>
+                    <td>Verify crud operations behavior - scenario test case #045</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_CRUD_046</strong></td>
+                    <td>CRUD Operations</td>
+                    <td>Verify crud operations behavior - scenario test case #046</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_CRUD_047</strong></td>
+                    <td>CRUD Operations</td>
+                    <td>Verify crud operations behavior - scenario test case #047</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_CRUD_048</strong></td>
+                    <td>CRUD Operations</td>
+                    <td>Verify crud operations behavior - scenario test case #048</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_CRUD_049</strong></td>
+                    <td>CRUD Operations</td>
+                    <td>Verify crud operations behavior - scenario test case #049</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_CRUD_050</strong></td>
+                    <td>CRUD Operations</td>
+                    <td>Verify crud operations behavior - scenario test case #050</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_INPU_001</strong></td>
+                    <td>Input Validation</td>
+                    <td>Verify input validation behavior - scenario test case #001</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_INPU_002</strong></td>
+                    <td>Input Validation</td>
+                    <td>Verify input validation behavior - scenario test case #002</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_INPU_003</strong></td>
+                    <td>Input Validation</td>
+                    <td>Verify input validation behavior - scenario test case #003</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_INPU_004</strong></td>
+                    <td>Input Validation</td>
+                    <td>Verify input validation behavior - scenario test case #004</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_INPU_005</strong></td>
+                    <td>Input Validation</td>
+                    <td>Verify input validation behavior - scenario test case #005</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_INPU_006</strong></td>
+                    <td>Input Validation</td>
+                    <td>Verify input validation behavior - scenario test case #006</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_INPU_007</strong></td>
+                    <td>Input Validation</td>
+                    <td>Verify input validation behavior - scenario test case #007</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_INPU_008</strong></td>
+                    <td>Input Validation</td>
+                    <td>Verify input validation behavior - scenario test case #008</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_INPU_009</strong></td>
+                    <td>Input Validation</td>
+                    <td>Verify input validation behavior - scenario test case #009</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_INPU_010</strong></td>
+                    <td>Input Validation</td>
+                    <td>Verify input validation behavior - scenario test case #010</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_INPU_011</strong></td>
+                    <td>Input Validation</td>
+                    <td>Verify input validation behavior - scenario test case #011</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_INPU_012</strong></td>
+                    <td>Input Validation</td>
+                    <td>Verify input validation behavior - scenario test case #012</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_INPU_013</strong></td>
+                    <td>Input Validation</td>
+                    <td>Verify input validation behavior - scenario test case #013</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_INPU_014</strong></td>
+                    <td>Input Validation</td>
+                    <td>Verify input validation behavior - scenario test case #014</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_INPU_015</strong></td>
+                    <td>Input Validation</td>
+                    <td>Verify input validation behavior - scenario test case #015</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_INPU_016</strong></td>
+                    <td>Input Validation</td>
+                    <td>Verify input validation behavior - scenario test case #016</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_INPU_017</strong></td>
+                    <td>Input Validation</td>
+                    <td>Verify input validation behavior - scenario test case #017</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_INPU_018</strong></td>
+                    <td>Input Validation</td>
+                    <td>Verify input validation behavior - scenario test case #018</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_INPU_019</strong></td>
+                    <td>Input Validation</td>
+                    <td>Verify input validation behavior - scenario test case #019</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_INPU_020</strong></td>
+                    <td>Input Validation</td>
+                    <td>Verify input validation behavior - scenario test case #020</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_INPU_021</strong></td>
+                    <td>Input Validation</td>
+                    <td>Verify input validation behavior - scenario test case #021</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_INPU_022</strong></td>
+                    <td>Input Validation</td>
+                    <td>Verify input validation behavior - scenario test case #022</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_INPU_023</strong></td>
+                    <td>Input Validation</td>
+                    <td>Verify input validation behavior - scenario test case #023</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_INPU_024</strong></td>
+                    <td>Input Validation</td>
+                    <td>Verify input validation behavior - scenario test case #024</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_INPU_025</strong></td>
+                    <td>Input Validation</td>
+                    <td>Verify input validation behavior - scenario test case #025</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_INPU_026</strong></td>
+                    <td>Input Validation</td>
+                    <td>Verify input validation behavior - scenario test case #026</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_INPU_027</strong></td>
+                    <td>Input Validation</td>
+                    <td>Verify input validation behavior - scenario test case #027</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_INPU_028</strong></td>
+                    <td>Input Validation</td>
+                    <td>Verify input validation behavior - scenario test case #028</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_INPU_029</strong></td>
+                    <td>Input Validation</td>
+                    <td>Verify input validation behavior - scenario test case #029</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_INPU_030</strong></td>
+                    <td>Input Validation</td>
+                    <td>Verify input validation behavior - scenario test case #030</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_INPU_031</strong></td>
+                    <td>Input Validation</td>
+                    <td>Verify input validation behavior - scenario test case #031</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_INPU_032</strong></td>
+                    <td>Input Validation</td>
+                    <td>Verify input validation behavior - scenario test case #032</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_INPU_033</strong></td>
+                    <td>Input Validation</td>
+                    <td>Verify input validation behavior - scenario test case #033</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_INPU_034</strong></td>
+                    <td>Input Validation</td>
+                    <td>Verify input validation behavior - scenario test case #034</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_INPU_035</strong></td>
+                    <td>Input Validation</td>
+                    <td>Verify input validation behavior - scenario test case #035</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_INPU_036</strong></td>
+                    <td>Input Validation</td>
+                    <td>Verify input validation behavior - scenario test case #036</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_INPU_037</strong></td>
+                    <td>Input Validation</td>
+                    <td>Verify input validation behavior - scenario test case #037</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_INPU_038</strong></td>
+                    <td>Input Validation</td>
+                    <td>Verify input validation behavior - scenario test case #038</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_INPU_039</strong></td>
+                    <td>Input Validation</td>
+                    <td>Verify input validation behavior - scenario test case #039</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_INPU_040</strong></td>
+                    <td>Input Validation</td>
+                    <td>Verify input validation behavior - scenario test case #040</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_ERRO_001</strong></td>
+                    <td>Error Handling</td>
+                    <td>Verify error handling behavior - scenario test case #001</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_ERRO_002</strong></td>
+                    <td>Error Handling</td>
+                    <td>Verify error handling behavior - scenario test case #002</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_ERRO_003</strong></td>
+                    <td>Error Handling</td>
+                    <td>Verify error handling behavior - scenario test case #003</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_ERRO_004</strong></td>
+                    <td>Error Handling</td>
+                    <td>Verify error handling behavior - scenario test case #004</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_ERRO_005</strong></td>
+                    <td>Error Handling</td>
+                    <td>Verify error handling behavior - scenario test case #005</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_ERRO_006</strong></td>
+                    <td>Error Handling</td>
+                    <td>Verify error handling behavior - scenario test case #006</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_ERRO_007</strong></td>
+                    <td>Error Handling</td>
+                    <td>Verify error handling behavior - scenario test case #007</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_ERRO_008</strong></td>
+                    <td>Error Handling</td>
+                    <td>Verify error handling behavior - scenario test case #008</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_ERRO_009</strong></td>
+                    <td>Error Handling</td>
+                    <td>Verify error handling behavior - scenario test case #009</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_ERRO_010</strong></td>
+                    <td>Error Handling</td>
+                    <td>Verify error handling behavior - scenario test case #010</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_ERRO_011</strong></td>
+                    <td>Error Handling</td>
+                    <td>Verify error handling behavior - scenario test case #011</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_ERRO_012</strong></td>
+                    <td>Error Handling</td>
+                    <td>Verify error handling behavior - scenario test case #012</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_ERRO_013</strong></td>
+                    <td>Error Handling</td>
+                    <td>Verify error handling behavior - scenario test case #013</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_ERRO_014</strong></td>
+                    <td>Error Handling</td>
+                    <td>Verify error handling behavior - scenario test case #014</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_ERRO_015</strong></td>
+                    <td>Error Handling</td>
+                    <td>Verify error handling behavior - scenario test case #015</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_ERRO_016</strong></td>
+                    <td>Error Handling</td>
+                    <td>Verify error handling behavior - scenario test case #016</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_ERRO_017</strong></td>
+                    <td>Error Handling</td>
+                    <td>Verify error handling behavior - scenario test case #017</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_ERRO_018</strong></td>
+                    <td>Error Handling</td>
+                    <td>Verify error handling behavior - scenario test case #018</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_ERRO_019</strong></td>
+                    <td>Error Handling</td>
+                    <td>Verify error handling behavior - scenario test case #019</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_ERRO_020</strong></td>
+                    <td>Error Handling</td>
+                    <td>Verify error handling behavior - scenario test case #020</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_SESS_001</strong></td>
+                    <td>Session Management</td>
+                    <td>Verify session management behavior - scenario test case #001</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_SESS_002</strong></td>
+                    <td>Session Management</td>
+                    <td>Verify session management behavior - scenario test case #002</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_SESS_003</strong></td>
+                    <td>Session Management</td>
+                    <td>Verify session management behavior - scenario test case #003</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_SESS_004</strong></td>
+                    <td>Session Management</td>
+                    <td>Verify session management behavior - scenario test case #004</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_SESS_005</strong></td>
+                    <td>Session Management</td>
+                    <td>Verify session management behavior - scenario test case #005</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_SESS_006</strong></td>
+                    <td>Session Management</td>
+                    <td>Verify session management behavior - scenario test case #006</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_SESS_007</strong></td>
+                    <td>Session Management</td>
+                    <td>Verify session management behavior - scenario test case #007</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_SESS_008</strong></td>
+                    <td>Session Management</td>
+                    <td>Verify session management behavior - scenario test case #008</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_SESS_009</strong></td>
+                    <td>Session Management</td>
+                    <td>Verify session management behavior - scenario test case #009</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_SESS_010</strong></td>
+                    <td>Session Management</td>
+                    <td>Verify session management behavior - scenario test case #010</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_SESS_011</strong></td>
+                    <td>Session Management</td>
+                    <td>Verify session management behavior - scenario test case #011</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_SESS_012</strong></td>
+                    <td>Session Management</td>
+                    <td>Verify session management behavior - scenario test case #012</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_SESS_013</strong></td>
+                    <td>Session Management</td>
+                    <td>Verify session management behavior - scenario test case #013</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_SESS_014</strong></td>
+                    <td>Session Management</td>
+                    <td>Verify session management behavior - scenario test case #014</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_SESS_015</strong></td>
+                    <td>Session Management</td>
+                    <td>Verify session management behavior - scenario test case #015</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_SESS_016</strong></td>
+                    <td>Session Management</td>
+                    <td>Verify session management behavior - scenario test case #016</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_SESS_017</strong></td>
+                    <td>Session Management</td>
+                    <td>Verify session management behavior - scenario test case #017</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_SESS_018</strong></td>
+                    <td>Session Management</td>
+                    <td>Verify session management behavior - scenario test case #018</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_SESS_019</strong></td>
+                    <td>Session Management</td>
+                    <td>Verify session management behavior - scenario test case #019</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_SESS_020</strong></td>
+                    <td>Session Management</td>
+                    <td>Verify session management behavior - scenario test case #020</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FILE_001</strong></td>
+                    <td>File Upload</td>
+                    <td>Verify file upload behavior - scenario test case #001</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FILE_002</strong></td>
+                    <td>File Upload</td>
+                    <td>Verify file upload behavior - scenario test case #002</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FILE_003</strong></td>
+                    <td>File Upload</td>
+                    <td>Verify file upload behavior - scenario test case #003</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FILE_004</strong></td>
+                    <td>File Upload</td>
+                    <td>Verify file upload behavior - scenario test case #004</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FILE_005</strong></td>
+                    <td>File Upload</td>
+                    <td>Verify file upload behavior - scenario test case #005</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FILE_006</strong></td>
+                    <td>File Upload</td>
+                    <td>Verify file upload behavior - scenario test case #006</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FILE_007</strong></td>
+                    <td>File Upload</td>
+                    <td>Verify file upload behavior - scenario test case #007</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FILE_008</strong></td>
+                    <td>File Upload</td>
+                    <td>Verify file upload behavior - scenario test case #008</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FILE_009</strong></td>
+                    <td>File Upload</td>
+                    <td>Verify file upload behavior - scenario test case #009</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FILE_010</strong></td>
+                    <td>File Upload</td>
+                    <td>Verify file upload behavior - scenario test case #010</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FILE_011</strong></td>
+                    <td>File Upload</td>
+                    <td>Verify file upload behavior - scenario test case #011</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FILE_012</strong></td>
+                    <td>File Upload</td>
+                    <td>Verify file upload behavior - scenario test case #012</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FILE_013</strong></td>
+                    <td>File Upload</td>
+                    <td>Verify file upload behavior - scenario test case #013</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FILE_014</strong></td>
+                    <td>File Upload</td>
+                    <td>Verify file upload behavior - scenario test case #014</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FILE_015</strong></td>
+                    <td>File Upload</td>
+                    <td>Verify file upload behavior - scenario test case #015</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FILE_016</strong></td>
+                    <td>File Upload</td>
+                    <td>Verify file upload behavior - scenario test case #016</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FILE_017</strong></td>
+                    <td>File Upload</td>
+                    <td>Verify file upload behavior - scenario test case #017</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FILE_018</strong></td>
+                    <td>File Upload</td>
+                    <td>Verify file upload behavior - scenario test case #018</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FILE_019</strong></td>
+                    <td>File Upload</td>
+                    <td>Verify file upload behavior - scenario test case #019</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_FILE_020</strong></td>
+                    <td>File Upload</td>
+                    <td>Verify file upload behavior - scenario test case #020</td>
+                    <td>P2</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_ACCE_001</strong></td>
+                    <td>Accessibility</td>
+                    <td>Verify accessibility behavior - scenario test case #001</td>
+                    <td>P3</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_ACCE_002</strong></td>
+                    <td>Accessibility</td>
+                    <td>Verify accessibility behavior - scenario test case #002</td>
+                    <td>P3</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_ACCE_003</strong></td>
+                    <td>Accessibility</td>
+                    <td>Verify accessibility behavior - scenario test case #003</td>
+                    <td>P3</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_ACCE_004</strong></td>
+                    <td>Accessibility</td>
+                    <td>Verify accessibility behavior - scenario test case #004</td>
+                    <td>P3</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_ACCE_005</strong></td>
+                    <td>Accessibility</td>
+                    <td>Verify accessibility behavior - scenario test case #005</td>
+                    <td>P3</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_ACCE_006</strong></td>
+                    <td>Accessibility</td>
+                    <td>Verify accessibility behavior - scenario test case #006</td>
+                    <td>P3</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_ACCE_007</strong></td>
+                    <td>Accessibility</td>
+                    <td>Verify accessibility behavior - scenario test case #007</td>
+                    <td>P3</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_ACCE_008</strong></td>
+                    <td>Accessibility</td>
+                    <td>Verify accessibility behavior - scenario test case #008</td>
+                    <td>P3</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_ACCE_009</strong></td>
+                    <td>Accessibility</td>
+                    <td>Verify accessibility behavior - scenario test case #009</td>
+                    <td>P3</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_ACCE_010</strong></td>
+                    <td>Accessibility</td>
+                    <td>Verify accessibility behavior - scenario test case #010</td>
+                    <td>P3</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_ACCE_011</strong></td>
+                    <td>Accessibility</td>
+                    <td>Verify accessibility behavior - scenario test case #011</td>
+                    <td>P3</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_ACCE_012</strong></td>
+                    <td>Accessibility</td>
+                    <td>Verify accessibility behavior - scenario test case #012</td>
+                    <td>P3</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_ACCE_013</strong></td>
+                    <td>Accessibility</td>
+                    <td>Verify accessibility behavior - scenario test case #013</td>
+                    <td>P3</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_ACCE_014</strong></td>
+                    <td>Accessibility</td>
+                    <td>Verify accessibility behavior - scenario test case #014</td>
+                    <td>P3</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_ACCE_015</strong></td>
+                    <td>Accessibility</td>
+                    <td>Verify accessibility behavior - scenario test case #015</td>
+                    <td>P3</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_ACCE_016</strong></td>
+                    <td>Accessibility</td>
+                    <td>Verify accessibility behavior - scenario test case #016</td>
+                    <td>P3</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_ACCE_017</strong></td>
+                    <td>Accessibility</td>
+                    <td>Verify accessibility behavior - scenario test case #017</td>
+                    <td>P3</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_ACCE_018</strong></td>
+                    <td>Accessibility</td>
+                    <td>Verify accessibility behavior - scenario test case #018</td>
+                    <td>P3</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_ACCE_019</strong></td>
+                    <td>Accessibility</td>
+                    <td>Verify accessibility behavior - scenario test case #019</td>
+                    <td>P3</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_ACCE_020</strong></td>
+                    <td>Accessibility</td>
+                    <td>Verify accessibility behavior - scenario test case #020</td>
+                    <td>P3</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_RESP_001</strong></td>
+                    <td>Responsive Design</td>
+                    <td>Verify responsive design behavior - scenario test case #001</td>
+                    <td>P3</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_RESP_002</strong></td>
+                    <td>Responsive Design</td>
+                    <td>Verify responsive design behavior - scenario test case #002</td>
+                    <td>P3</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_RESP_003</strong></td>
+                    <td>Responsive Design</td>
+                    <td>Verify responsive design behavior - scenario test case #003</td>
+                    <td>P3</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_RESP_004</strong></td>
+                    <td>Responsive Design</td>
+                    <td>Verify responsive design behavior - scenario test case #004</td>
+                    <td>P3</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_RESP_005</strong></td>
+                    <td>Responsive Design</td>
+                    <td>Verify responsive design behavior - scenario test case #005</td>
+                    <td>P3</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_RESP_006</strong></td>
+                    <td>Responsive Design</td>
+                    <td>Verify responsive design behavior - scenario test case #006</td>
+                    <td>P3</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_RESP_007</strong></td>
+                    <td>Responsive Design</td>
+                    <td>Verify responsive design behavior - scenario test case #007</td>
+                    <td>P3</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_RESP_008</strong></td>
+                    <td>Responsive Design</td>
+                    <td>Verify responsive design behavior - scenario test case #008</td>
+                    <td>P3</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_RESP_009</strong></td>
+                    <td>Responsive Design</td>
+                    <td>Verify responsive design behavior - scenario test case #009</td>
+                    <td>P3</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_RESP_010</strong></td>
+                    <td>Responsive Design</td>
+                    <td>Verify responsive design behavior - scenario test case #010</td>
+                    <td>P3</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_RESP_011</strong></td>
+                    <td>Responsive Design</td>
+                    <td>Verify responsive design behavior - scenario test case #011</td>
+                    <td>P3</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_RESP_012</strong></td>
+                    <td>Responsive Design</td>
+                    <td>Verify responsive design behavior - scenario test case #012</td>
+                    <td>P3</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_RESP_013</strong></td>
+                    <td>Responsive Design</td>
+                    <td>Verify responsive design behavior - scenario test case #013</td>
+                    <td>P3</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_RESP_014</strong></td>
+                    <td>Responsive Design</td>
+                    <td>Verify responsive design behavior - scenario test case #014</td>
+                    <td>P3</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_RESP_015</strong></td>
+                    <td>Responsive Design</td>
+                    <td>Verify responsive design behavior - scenario test case #015</td>
+                    <td>P3</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_RESP_016</strong></td>
+                    <td>Responsive Design</td>
+                    <td>Verify responsive design behavior - scenario test case #016</td>
+                    <td>P3</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_RESP_017</strong></td>
+                    <td>Responsive Design</td>
+                    <td>Verify responsive design behavior - scenario test case #017</td>
+                    <td>P3</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_RESP_018</strong></td>
+                    <td>Responsive Design</td>
+                    <td>Verify responsive design behavior - scenario test case #018</td>
+                    <td>P3</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_RESP_019</strong></td>
+                    <td>Responsive Design</td>
+                    <td>Verify responsive design behavior - scenario test case #019</td>
+                    <td>P3</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_RESP_020</strong></td>
+                    <td>Responsive Design</td>
+                    <td>Verify responsive design behavior - scenario test case #020</td>
+                    <td>P3</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_PERF_001</strong></td>
+                    <td>Performance Smoke Tests</td>
+                    <td>Verify performance smoke tests behavior - scenario test case #001</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_PERF_002</strong></td>
+                    <td>Performance Smoke Tests</td>
+                    <td>Verify performance smoke tests behavior - scenario test case #002</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_PERF_003</strong></td>
+                    <td>Performance Smoke Tests</td>
+                    <td>Verify performance smoke tests behavior - scenario test case #003</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_PERF_004</strong></td>
+                    <td>Performance Smoke Tests</td>
+                    <td>Verify performance smoke tests behavior - scenario test case #004</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_PERF_005</strong></td>
+                    <td>Performance Smoke Tests</td>
+                    <td>Verify performance smoke tests behavior - scenario test case #005</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_PERF_006</strong></td>
+                    <td>Performance Smoke Tests</td>
+                    <td>Verify performance smoke tests behavior - scenario test case #006</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_PERF_007</strong></td>
+                    <td>Performance Smoke Tests</td>
+                    <td>Verify performance smoke tests behavior - scenario test case #007</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_PERF_008</strong></td>
+                    <td>Performance Smoke Tests</td>
+                    <td>Verify performance smoke tests behavior - scenario test case #008</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_PERF_009</strong></td>
+                    <td>Performance Smoke Tests</td>
+                    <td>Verify performance smoke tests behavior - scenario test case #009</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_PERF_010</strong></td>
+                    <td>Performance Smoke Tests</td>
+                    <td>Verify performance smoke tests behavior - scenario test case #010</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_PERF_011</strong></td>
+                    <td>Performance Smoke Tests</td>
+                    <td>Verify performance smoke tests behavior - scenario test case #011</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_PERF_012</strong></td>
+                    <td>Performance Smoke Tests</td>
+                    <td>Verify performance smoke tests behavior - scenario test case #012</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_PERF_013</strong></td>
+                    <td>Performance Smoke Tests</td>
+                    <td>Verify performance smoke tests behavior - scenario test case #013</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_PERF_014</strong></td>
+                    <td>Performance Smoke Tests</td>
+                    <td>Verify performance smoke tests behavior - scenario test case #014</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_PERF_015</strong></td>
+                    <td>Performance Smoke Tests</td>
+                    <td>Verify performance smoke tests behavior - scenario test case #015</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_PERF_016</strong></td>
+                    <td>Performance Smoke Tests</td>
+                    <td>Verify performance smoke tests behavior - scenario test case #016</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_PERF_017</strong></td>
+                    <td>Performance Smoke Tests</td>
+                    <td>Verify performance smoke tests behavior - scenario test case #017</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_PERF_018</strong></td>
+                    <td>Performance Smoke Tests</td>
+                    <td>Verify performance smoke tests behavior - scenario test case #018</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_PERF_019</strong></td>
+                    <td>Performance Smoke Tests</td>
+                    <td>Verify performance smoke tests behavior - scenario test case #019</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_PERF_020</strong></td>
+                    <td>Performance Smoke Tests</td>
+                    <td>Verify performance smoke tests behavior - scenario test case #020</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_REGR_001</strong></td>
+                    <td>Regression</td>
+                    <td>Verify regression behavior - scenario test case #001</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_REGR_002</strong></td>
+                    <td>Regression</td>
+                    <td>Verify regression behavior - scenario test case #002</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_REGR_003</strong></td>
+                    <td>Regression</td>
+                    <td>Verify regression behavior - scenario test case #003</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_REGR_004</strong></td>
+                    <td>Regression</td>
+                    <td>Verify regression behavior - scenario test case #004</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_REGR_005</strong></td>
+                    <td>Regression</td>
+                    <td>Verify regression behavior - scenario test case #005</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_REGR_006</strong></td>
+                    <td>Regression</td>
+                    <td>Verify regression behavior - scenario test case #006</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_REGR_007</strong></td>
+                    <td>Regression</td>
+                    <td>Verify regression behavior - scenario test case #007</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_REGR_008</strong></td>
+                    <td>Regression</td>
+                    <td>Verify regression behavior - scenario test case #008</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_REGR_009</strong></td>
+                    <td>Regression</td>
+                    <td>Verify regression behavior - scenario test case #009</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_REGR_010</strong></td>
+                    <td>Regression</td>
+                    <td>Verify regression behavior - scenario test case #010</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_REGR_011</strong></td>
+                    <td>Regression</td>
+                    <td>Verify regression behavior - scenario test case #011</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_REGR_012</strong></td>
+                    <td>Regression</td>
+                    <td>Verify regression behavior - scenario test case #012</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_REGR_013</strong></td>
+                    <td>Regression</td>
+                    <td>Verify regression behavior - scenario test case #013</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_REGR_014</strong></td>
+                    <td>Regression</td>
+                    <td>Verify regression behavior - scenario test case #014</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_REGR_015</strong></td>
+                    <td>Regression</td>
+                    <td>Verify regression behavior - scenario test case #015</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_REGR_016</strong></td>
+                    <td>Regression</td>
+                    <td>Verify regression behavior - scenario test case #016</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_REGR_017</strong></td>
+                    <td>Regression</td>
+                    <td>Verify regression behavior - scenario test case #017</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_REGR_018</strong></td>
+                    <td>Regression</td>
+                    <td>Verify regression behavior - scenario test case #018</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_REGR_019</strong></td>
+                    <td>Regression</td>
+                    <td>Verify regression behavior - scenario test case #019</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_REGR_020</strong></td>
+                    <td>Regression</td>
+                    <td>Verify regression behavior - scenario test case #020</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_REGR_021</strong></td>
+                    <td>Regression</td>
+                    <td>Verify regression behavior - scenario test case #021</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_REGR_022</strong></td>
+                    <td>Regression</td>
+                    <td>Verify regression behavior - scenario test case #022</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_REGR_023</strong></td>
+                    <td>Regression</td>
+                    <td>Verify regression behavior - scenario test case #023</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_REGR_024</strong></td>
+                    <td>Regression</td>
+                    <td>Verify regression behavior - scenario test case #024</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_REGR_025</strong></td>
+                    <td>Regression</td>
+                    <td>Verify regression behavior - scenario test case #025</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_REGR_026</strong></td>
+                    <td>Regression</td>
+                    <td>Verify regression behavior - scenario test case #026</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_REGR_027</strong></td>
+                    <td>Regression</td>
+                    <td>Verify regression behavior - scenario test case #027</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_REGR_028</strong></td>
+                    <td>Regression</td>
+                    <td>Verify regression behavior - scenario test case #028</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_REGR_029</strong></td>
+                    <td>Regression</td>
+                    <td>Verify regression behavior - scenario test case #029</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_REGR_030</strong></td>
+                    <td>Regression</td>
+                    <td>Verify regression behavior - scenario test case #030</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_REGR_031</strong></td>
+                    <td>Regression</td>
+                    <td>Verify regression behavior - scenario test case #031</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_REGR_032</strong></td>
+                    <td>Regression</td>
+                    <td>Verify regression behavior - scenario test case #032</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_REGR_033</strong></td>
+                    <td>Regression</td>
+                    <td>Verify regression behavior - scenario test case #033</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_REGR_034</strong></td>
+                    <td>Regression</td>
+                    <td>Verify regression behavior - scenario test case #034</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_REGR_035</strong></td>
+                    <td>Regression</td>
+                    <td>Verify regression behavior - scenario test case #035</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_REGR_036</strong></td>
+                    <td>Regression</td>
+                    <td>Verify regression behavior - scenario test case #036</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_REGR_037</strong></td>
+                    <td>Regression</td>
+                    <td>Verify regression behavior - scenario test case #037</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_REGR_038</strong></td>
+                    <td>Regression</td>
+                    <td>Verify regression behavior - scenario test case #038</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_REGR_039</strong></td>
+                    <td>Regression</td>
+                    <td>Verify regression behavior - scenario test case #039</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_REGR_040</strong></td>
+                    <td>Regression</td>
+                    <td>Verify regression behavior - scenario test case #040</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_REGR_041</strong></td>
+                    <td>Regression</td>
+                    <td>Verify regression behavior - scenario test case #041</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_REGR_042</strong></td>
+                    <td>Regression</td>
+                    <td>Verify regression behavior - scenario test case #042</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_REGR_043</strong></td>
+                    <td>Regression</td>
+                    <td>Verify regression behavior - scenario test case #043</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_REGR_044</strong></td>
+                    <td>Regression</td>
+                    <td>Verify regression behavior - scenario test case #044</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_REGR_045</strong></td>
+                    <td>Regression</td>
+                    <td>Verify regression behavior - scenario test case #045</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_REGR_046</strong></td>
+                    <td>Regression</td>
+                    <td>Verify regression behavior - scenario test case #046</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_REGR_047</strong></td>
+                    <td>Regression</td>
+                    <td>Verify regression behavior - scenario test case #047</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_REGR_048</strong></td>
+                    <td>Regression</td>
+                    <td>Verify regression behavior - scenario test case #048</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_REGR_049</strong></td>
+                    <td>Regression</td>
+                    <td>Verify regression behavior - scenario test case #049</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+                <tr>
+                    <td><strong>TC_SEL_REGR_050</strong></td>
+                    <td>Regression</td>
+                    <td>Verify regression behavior - scenario test case #050</td>
+                    <td>P1</td>
+                    <td><span class="badge badge-pass">PASS</span></td>
+                    <td>115</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function filterReport() {
+            const q = document.getElementById('searchInput').value.toLowerCase();
+            const status = document.getElementById('statusFilter').value;
+            const rows = document.querySelectorAll('#reportTable tbody tr');
+
+            rows.forEach(row => {
+                const text = row.innerText.toLowerCase();
+                const matchQ = text.includes(q);
+                const matchS = status === 'ALL' || text.includes(status.toLowerCase());
+                row.style.display = (matchQ && matchS) ? '' : 'none';
+            });
+        }
+    </script>
+</body>
+</html>
