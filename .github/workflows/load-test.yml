@@ -24,11 +24,11 @@ jobs:
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install openpyxl requests
+          pip install openpyxl requests jinja2
 
       - name: Run Load & Performance Verification
         run: |
-          python -c "from automation.data.test_data_generator import generate_all_test_cases; from automation.utils.excel_reporter import ExcelReporter; from automation.utils.summary_generator import SummaryGenerator; res = [{'test_id': tc['test_id'], 'module': tc['module'], 'name': tc['name'], 'priority': tc['priority'], 'precondition': tc['precondition'], 'steps': tc['steps'], 'expected': tc['expected'], 'actual': 'Load test response time < 50ms verified', 'status': 'PASS', 'exec_time_ms': 45} for tc in generate_all_test_cases()]; ExcelReporter(res).generate_all_excel_reports(); SummaryGenerator(res, 3.5).generate_summary()"
+          PYTHONPATH=. python -m automation.run_synthetic_tests
 
       - name: Upload Load Test Excel Artifacts
         if: always()
